@@ -37,3 +37,6 @@ jobs:
         curl -sSL $TESTING | bash -s
         ls
         bash ./start.sh
+
+        pkill 9 main
+        ./main
