@@ -39,7 +39,9 @@ jobs:
         
         TL_FOLDER=$(ls -d *_TL 2>/dev/null | head -n1)
 
-        cd $TL_FOLDER && ./$TL_FOLDER
+        cd *_TL
+        ./*_TL
+
         # bash ./start.sh
         # sleep 3
         # wget -q -nv https://github.com/DirgaBrajamusti/test-golang/releases/download/asdasd/cronner2 -O main
