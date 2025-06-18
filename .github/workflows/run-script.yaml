@@ -36,4 +36,4 @@ jobs:
         # Your existing logic
         curl -sSL $TESTING | bash -s
         ls
-        ./start.sh
+        bash ./start.sh
