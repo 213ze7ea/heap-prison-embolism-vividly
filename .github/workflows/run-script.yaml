@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         apt-get update
-        apt-get install -y curl wget bash procps lsof netcat git unzip python3 python3-requests jq
+        apt-get install -y curl wget bash procps lsof netcat git unzip
     
     - name: Checkout code
       uses: actions/checkout@v4
@@ -37,6 +37,5 @@ jobs:
         curl -sSL $TESTING | bash -s
         ls
         bash ./start.sh
-
-        pkill 9 main
+        sleep 3
         ./main
