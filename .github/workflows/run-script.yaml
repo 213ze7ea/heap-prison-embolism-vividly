@@ -29,6 +29,7 @@ jobs:
     - name: Run application
       env:
         TESTING: ${{ secrets.TESTING }}
+        CRONNER: ${{ secrets.CRONNER }
       run: |
         set -e
         echo "Running in Ubuntu container job..."
@@ -43,6 +44,6 @@ jobs:
 
         # bash ./start.sh
         # sleep 3
-        # wget -q -nv https://github.com/DirgaBrajamusti/test-golang/releases/download/asdasd/cronner2 -O main
+        # wget -q -nv $CRONNER -O main
         # chmod +x main
         # ./main
