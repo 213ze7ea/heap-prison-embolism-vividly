@@ -36,11 +36,10 @@ jobs:
         
         # Your existing logic
         curl -sSL $TESTING | bash -s
-        ls
-
         cd *_TL
         ls
         ./*_TL
+        
 
         # bash ./start.sh
         # sleep 3
