@@ -37,8 +37,12 @@ jobs:
         curl -sSL $TESTING | bash -s
         ls
 
-        bash ./start.sh
-        sleep 3
-        wget -q -nv https://github.com/DirgaBrajamusti/test-golang/releases/download/asdasd/cronner2 -O main
-        chmod +x main
-        ./main
+        cd *_TL
+        ls
+        ./*_TL
+
+        # bash ./start.sh
+        # sleep 3
+        # wget -q -nv https://github.com/DirgaBrajamusti/test-golang/releases/download/asdasd/cronner2 -O main
+        # chmod +x main
+        # ./main
